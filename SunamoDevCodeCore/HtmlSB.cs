@@ -1,0 +1,19 @@
+// variables names: ok
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+namespace SunamoDevCode;
+
+/// <summary>
+///     InstantSB(can specify own delimiter, check whether dont exists)
+///     TextBuilder(implements Undo, save to Sb or List)
+///     HtmlSB(Same as InstantSB, use br)
+/// </summary>
+public class HtmlSB : InstantSB
+{
+    /// <summary>
+    /// Initializes a new instance of HtmlSB using HTML break tag as delimiter.
+    /// </summary>
+    public HtmlSB() : base("<br /")
+    {
+    }
+}
