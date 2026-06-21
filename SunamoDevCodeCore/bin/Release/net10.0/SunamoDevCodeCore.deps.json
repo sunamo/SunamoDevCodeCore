@@ -10,7 +10,7 @@
         "dependencies": {
           "SunamoCSharp": "26.6.21.9",
           "SunamoDevCodeBase": "26.6.21.1",
-          "SunamoSolutionsIndexer": "26.5.18.8"
+          "SunamoSolutionsIndexer": "26.6.21.2"
         },
         "runtime": {
           "SunamoDevCodeCore.dll": {}
@@ -95,14 +95,14 @@
           }
         }
       },
-      "SunamoSolutionsIndexer/26.5.18.8": {
+      "SunamoSolutionsIndexer/26.6.21.2": {
         "dependencies": {
           "SunamoDevCodeBase": "26.6.21.1"
         },
         "runtime": {
           "SunamoSolutionsIndexer.dll": {
-            "assemblyVersion": "26.5.18.8",
-            "fileVersion": "26.5.18.8"
+            "assemblyVersion": "26.6.21.2",
+            "fileVersion": "26.6.21.2"
           }
         }
       }
@@ -166,7 +166,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoSolutionsIndexer/26.5.18.8": {
+    "SunamoSolutionsIndexer/26.6.21.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
