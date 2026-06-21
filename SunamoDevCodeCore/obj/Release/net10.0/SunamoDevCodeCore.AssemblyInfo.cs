@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("www.sunamo.cz")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Core utilities and helpers extracted from SunamoDevCode.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("26.6.21.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("26.6.21.1+ef80443293aac10bacabe86f42d550d9a8f0823f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("26.6.21.1+c796a0e491e9ceffd889ac41bded754cf802068b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SunamoDevCodeCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SunamoDevCodeCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("26.6.21.1")]
