@@ -1,4 +1,4 @@
-﻿global using System.Collections.Generic;
+global using System.Collections.Generic;
 global using System;
 global using System.Linq;
 global using System.Text;
@@ -82,8 +82,6 @@ global using SunamoCSharp;
 global using SunamoCSharp.Args;
 global using SunamoCSharp.Helpers;
 global using SunamoSolutionsIndexer;
-global using SunamoSolutionsIndexer.Enums;
-global using SunamoSolutionsIndexer.Data.SolutionFolderNs;
 global using SunamoDevCode.Constants;
 global using SunamoDevCode.Data;
 global using SunamoDevCode.Interfaces;
