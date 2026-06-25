@@ -82,6 +82,8 @@ global using SunamoCSharp;
 global using SunamoCSharp.Args;
 global using SunamoCSharp.Helpers;
 global using SunamoSolutionsIndexer;
+global using SunamoSolutionsIndexer.Data.SolutionFolderNs;
+global using SunamoSolutionsIndexer.Enums;
 global using SunamoDevCodeCore;
 global using SunamoDevCodeCore.Constants;
 global using SunamoDevCodeCore.Data;
