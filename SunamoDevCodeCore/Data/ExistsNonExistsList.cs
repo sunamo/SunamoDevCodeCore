@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Data;
+namespace SunamoDevCodeCore.Data;
 
 public class ExistsNonExistsList<T>
 {

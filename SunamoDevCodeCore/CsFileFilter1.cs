@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 // Cant be derived from FiltersNotTranslateAble because easy of finding instances of CsFileFilter
 public partial class CsFileFilter : ICsFileFilter

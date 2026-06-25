@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 using Microsoft.Extensions.Logging;
 

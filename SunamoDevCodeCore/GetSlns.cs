@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 using System.Collections.Generic;
 using System.Linq;

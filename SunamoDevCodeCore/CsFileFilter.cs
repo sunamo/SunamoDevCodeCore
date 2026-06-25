@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 // EN: Filter for C# files with configurable filtering rules
 // CZ: Filtr pro C# soubory s konfigurovatelными pravidly filtrování

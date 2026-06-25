@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Data;
+namespace SunamoDevCodeCore.Data;
 
 // EN: Loads all csproj in directory, can convert from path to name and vice versa
 // CZ: Načte všechny csproj v dir, umí převádět z cesty na název a vice versa

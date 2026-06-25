@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoCSharp\\SunamoCSharp\\SunamoCSharp.csproj": {
-      "version": "26.6.21.9",
+      "version": "26.6.25.12",
       "restore": {
         "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoCSharp\\SunamoCSharp\\SunamoCSharp.csproj",
         "projectName": "SunamoCSharp",
@@ -30,6 +30,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\aktiv\\AppData\\Local\\Temp\\claude\\local-nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/sunamocz/_packaging/nuget_feed/nuget/v3/index.json": {}
         },
@@ -1175,7 +1176,7 @@
       }
     },
     "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeBase\\SunamoDevCodeBase\\SunamoDevCodeBase.csproj": {
-      "version": "26.6.21.1",
+      "version": "26.6.25.3",
       "restore": {
         "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeBase\\SunamoDevCodeBase\\SunamoDevCodeBase.csproj",
         "projectName": "SunamoDevCodeBase",
@@ -1200,6 +1201,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\aktiv\\AppData\\Local\\Temp\\claude\\local-nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/sunamocz/_packaging/nuget_feed/nuget/v3/index.json": {}
         },
@@ -2393,7 +2395,7 @@
       }
     },
     "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeCore\\SunamoDevCodeCore\\SunamoDevCodeCore.csproj": {
-      "version": "26.6.21.2",
+      "version": "26.6.25.3",
       "restore": {
         "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeCore\\SunamoDevCodeCore\\SunamoDevCodeCore.csproj",
         "projectName": "SunamoDevCodeCore",
@@ -2418,6 +2420,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\aktiv\\AppData\\Local\\Temp\\claude\\local-nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/sunamocz/_packaging/nuget_feed/nuget/v3/index.json": {}
         },
@@ -3612,6 +3615,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\aktiv\\AppData\\Local\\Temp\\claude\\local-nuget": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://pkgs.dev.azure.com/sunamocz/_packaging/nuget_feed/nuget/v3/index.json": {}
         },

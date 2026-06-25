@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 public static class TrimerTags
 {

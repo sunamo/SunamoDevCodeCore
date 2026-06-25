@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Services;
+namespace SunamoDevCodeCore.Services;
 
 public class DotnetOutputService
 {

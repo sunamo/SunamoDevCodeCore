@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Services;
+namespace SunamoDevCodeCore.Services;
 
 public class AddOrEditNamespaceService
 {
@@ -17,6 +17,7 @@ public class AddOrEditNamespaceService
         var filename = Path.GetFileNameWithoutExtension(csPath);
         if (filename == "GlobalSuppressions") return null;
         if (filename == "GlobalUsings") return null;
+        if (filename == "Net48Polyfills") return null;
         if (pathToSave != null)
         {
             csPath = pathToSave;
@@ -28,10 +29,13 @@ public class AddOrEditNamespaceService
         var relPath = csPath.Replace(pathToCsprojFolder, string.Empty);
         var parts = relPath.Split('\\', StringSplitOptions.RemoveEmptyEntries).ToList();
         parts.RemoveAt(parts.Count - 1);
-        // todo zde je dobré zkontrolovat zda nemám cíe FS NS. když slučuji soubory, občas se to podaří.
-        // ve výsledku třída má např FP SunamoFileSystem.SunamoFileSystem.FS
-        // případně hledat na CS8954
-        // Prvně je nutné odstranit FS NS. druhá metoda musí být 100% správně.
+        // Strip leading path segment that equals the project name (handles projects with an inner subfolder
+        // named the same as the project, which would otherwise produce duplicate namespace segments
+        // like SunamoFileSystem.SunamoFileSystem.FS instead of SunamoFileSystem.FS)
+        if (parts.Count > 0 && string.Equals(parts[0], projectName, StringComparison.OrdinalIgnoreCase))
+        {
+            parts.RemoveAt(0);
+        }
         var linesFileOri = linesFile.ToList();
         linesFile = await RemoveFileScopedNamespaceWhenIsInSharpIf(linesFile);
         var fullNamespace = projectName + (parts.Count == 0 ? "" : ".") + string.Join(".", parts);

@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoDevCodeCore;
 
 // Druhá část je v ToNugets
 // Vložit sem jak toto šílenství s nugety skončí
