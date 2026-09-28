@@ -16,6 +16,9 @@ public class Boilerplate
     }
 }";
 
+        // The monolith source file used CRLF, so the verbatim template contained CRLF regardless of how this file is checked out
+        csharpTemplate = csharpTemplate.Replace("\r\n", "\n").Replace("\n", "\r\n");
+
         var stringBuilder = new StringBuilder();
         // If it not working, try Format3. Dont use any try-catch!
         stringBuilder.AppendLine(SHFormat.Format4(csharpTemplate, innerMain));
@@ -39,6 +42,9 @@ public class Boilerplate
             {3}
         }
     }";
+
+        // The monolith source file used CRLF, so the verbatim template contained CRLF regardless of how this file is checked out
+        classTemplate = classTemplate.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
         var stringBuilder = new StringBuilder();
 
