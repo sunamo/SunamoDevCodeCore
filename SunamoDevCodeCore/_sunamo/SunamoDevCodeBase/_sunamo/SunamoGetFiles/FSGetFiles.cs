@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoGetFiles;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoGetFiles;
 
 internal class FSGetFiles
 {

@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo._public;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public;
 
 internal class ChangeContentArgsDC
 {

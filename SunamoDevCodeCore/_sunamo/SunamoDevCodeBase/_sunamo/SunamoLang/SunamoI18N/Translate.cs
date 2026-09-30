@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoLang.SunamoI18N;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoI18N;
 
 //namespace
 //#if SunamoDevCode

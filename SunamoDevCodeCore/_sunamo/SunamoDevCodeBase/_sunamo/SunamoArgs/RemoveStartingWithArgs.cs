@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoArgs;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoArgs;
 
 internal class RemoveStartingWithArgs
 {

@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoCollections;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoCollections;
 
 internal partial class CA
 {

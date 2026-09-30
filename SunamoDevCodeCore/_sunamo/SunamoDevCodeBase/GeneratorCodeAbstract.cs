@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCode;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase;
 
 internal abstract class GeneratorCodeAbstract
 {

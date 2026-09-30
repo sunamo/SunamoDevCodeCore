@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoInterfaces.Interfaces;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoInterfaces.Interfaces;
 
 internal interface IListBoxHelperItem
 {

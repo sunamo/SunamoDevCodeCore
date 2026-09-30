@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoStringFormat;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoStringFormat;
 
 internal class SHFormat
 {

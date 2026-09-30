@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoStringSplit;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoStringSplit;
 
 internal class SHSplit
 {

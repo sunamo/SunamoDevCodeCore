@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoLang.SunamoXlf;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoXlf;
 
 internal class BasePathsHelper
 {

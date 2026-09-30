@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCode.Enums;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase.Enums;
 
 internal enum RepositoryLocal
 {

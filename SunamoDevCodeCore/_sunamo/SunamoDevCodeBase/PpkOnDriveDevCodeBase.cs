@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase;
 
 public abstract class PpkOnDriveDevCodeBase<T> : List<T>
 {

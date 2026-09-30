@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoConverters.Converts;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoConverters.Converts;
 
 internal class ConvertSnakeConvention
 {

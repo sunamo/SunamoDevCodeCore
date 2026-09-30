@@ -1,4 +1,4 @@
-﻿namespace SunamoSolutionsIndexer.Interfaces;
+namespace SunamoDevCodeCore._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer.Interfaces;
 
 internal interface ISolutionFolderSerialize
 {

@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo.Enums;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase.Enums;
 
 public enum WhatIsExcepted
 {

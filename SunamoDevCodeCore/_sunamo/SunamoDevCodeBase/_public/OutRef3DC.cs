@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public;
 
 public class OutRef3DC<T, U, V> : OutRefDC<T, U>
 {

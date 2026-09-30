@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoStringTrim;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoStringTrim;
 
 internal class SHTrim
 {

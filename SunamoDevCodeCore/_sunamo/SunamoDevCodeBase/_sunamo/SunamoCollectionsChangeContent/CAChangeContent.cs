@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoCollectionsChangeContent;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoCollectionsChangeContent;
 
 internal class CAChangeContent
 {

@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public.SunamoCollectionWithoutDuplicates;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoCollectionWithoutDuplicates;
 
 public abstract class CollectionWithoutDuplicatesBaseDC<T>
 {

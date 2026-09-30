@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoFileExtensions;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoFileExtensions;
 
 internal class AllExtensions
 {

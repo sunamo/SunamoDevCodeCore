@@ -1,4 +1,4 @@
-﻿namespace SunamoSolutionsIndexer;
+namespace SunamoDevCodeCore._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer;
 
 internal class SolutionsIndexerStrings
 {

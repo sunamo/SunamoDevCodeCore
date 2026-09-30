@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public.SunamoData.Data;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoData.Data;
 
 internal class FromToList
 {

@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoValues.All;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoValues.All;
 
 internal class AllHtmlAttrsValues
 {

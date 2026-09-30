@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public;
 
 // TODO: Should this inherit from GetFoldersEveryFolderArgs? In vs2 it does
 internal class GetFilesArgsDC : GetFilesBaseArgsDC
