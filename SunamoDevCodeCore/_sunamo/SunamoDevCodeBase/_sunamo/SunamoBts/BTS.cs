@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoBts;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoBts;
 
 internal class BTS
 {

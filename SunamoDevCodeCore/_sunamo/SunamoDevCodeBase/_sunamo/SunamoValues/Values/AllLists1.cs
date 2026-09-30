@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoValues.Values;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoValues.Values;
 
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy

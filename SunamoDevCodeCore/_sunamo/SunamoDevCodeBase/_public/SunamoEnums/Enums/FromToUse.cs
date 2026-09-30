@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public.SunamoEnums.Enums;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoEnums.Enums;
 
 internal enum FromToUseDC
 {

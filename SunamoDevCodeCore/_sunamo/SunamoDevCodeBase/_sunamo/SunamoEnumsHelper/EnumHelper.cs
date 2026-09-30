@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoEnumsHelper;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoEnumsHelper;
 
 internal class EnumHelper
 {

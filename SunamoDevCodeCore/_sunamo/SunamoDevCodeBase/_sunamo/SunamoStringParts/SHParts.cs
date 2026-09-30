@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoStringParts;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoStringParts;
 
 internal class SHParts
 {

@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo;
 
 internal class FSGetFolders
 {

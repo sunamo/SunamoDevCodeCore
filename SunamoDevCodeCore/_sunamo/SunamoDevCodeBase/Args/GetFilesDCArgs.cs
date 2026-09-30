@@ -1,5 +1,5 @@
 ﻿// variables names: ok
-namespace SunamoDevCodeCore._sunamo.Args;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase.Args;
 
 public class GetFilesDCArgs
 {

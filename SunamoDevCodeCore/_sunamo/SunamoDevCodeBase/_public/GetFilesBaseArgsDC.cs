@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo._public;
+﻿namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public;
 
 // EN: Base arguments class for getting files
 // CZ: Základní třída argumentů pro získávání souborů

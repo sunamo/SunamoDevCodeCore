@@ -1,4 +1,4 @@
-namespace SunamoDevCodeCore._sunamo.SunamoRegex;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoRegex;
 
 // Represents a wildcard running on the System.Text.RegularExpressions engine.
 internal class Wildcard : Regex

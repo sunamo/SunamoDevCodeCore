@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCode;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase;
 
 // Helper class for System.Windows controls shortcuts and names
 internal static class SystemWindowsControls

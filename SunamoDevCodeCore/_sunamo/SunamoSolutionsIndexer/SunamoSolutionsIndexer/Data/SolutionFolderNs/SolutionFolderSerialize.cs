@@ -1,4 +1,4 @@
-﻿namespace SunamoSolutionsIndexer.Data.SolutionFolderNs;
+namespace SunamoDevCodeCore._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer.Data.SolutionFolderNs;
 
 internal class SolutionFolderSerialize : IListBoxHelperItem, ISolutionFolderSerialize
 {

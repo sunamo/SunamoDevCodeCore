@@ -1,4 +1,4 @@
-﻿namespace SunamoDevCodeCore._sunamo;
+namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase;
 
 // Checking whether string is already contained.
 public class PpkOnDriveDC : PpkOnDriveDevCodeBase<string>

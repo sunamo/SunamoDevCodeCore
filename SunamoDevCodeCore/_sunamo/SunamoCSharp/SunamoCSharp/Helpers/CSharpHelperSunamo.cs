@@ -1,4 +1,4 @@
-﻿namespace SunamoCSharp.Helpers;
+namespace SunamoDevCodeCore._sunamo.SunamoCSharp.SunamoCSharp.Helpers;
 
 internal class CSharpHelperSunamo
 {
