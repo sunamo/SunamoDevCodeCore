@@ -1,15 +1,13 @@
 ---
-schema_version: 1
+schema_version: 2
 type: library
-file_count: 52
+file_count: 245
 delete_recommendation_percent: 5
-generated_date: 2026-09-29
+generated_date: 2026-09-30
+generated_time: 15:10:38
 ---
 
 ## Description
 
-Jádrové utility a pomocníci vyčleněné z monolitu `SunamoDevCode`.
-
-Řeší práci s csproj soubory v rámci solution (filtrování, konstanty), parsování výstupu `dotnet build`, kódování zpětných lomítek a generování boilerplate kódu.
-
-Publikováno na NuGet 2026-09-29, navazuje na `SunamoDevCodeBase`.
+Jádrové utility vyčleněné z monolitu `SunamoDevCode`: práce s csproj soubory v solution (filtrování, konstanty), parsování výstupu `dotnet build`, kódování zpětných lomítek a generování boilerplate kódu.
+Balíček je self-contained: kód dříve referencovaných balíčků (DevCodeBase, CSharp, SolutionsIndexer) je zkopírován do `Internal\` jako internal a jiné Sunamo balíčky nereferencuje.
