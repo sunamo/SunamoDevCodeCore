@@ -10,4 +10,4 @@ generated_time: 16:28:39
 ## Description
 
 Jádrové utility vyčleněné z monolitu `SunamoDevCode`: práce s csproj soubory v solution (filtrování, konstanty), parsování výstupu `dotnet build`, kódování zpětných lomítek a generování boilerplate kódu.
-Balíček je self-contained: kód dříve referencovaných balíčků (DevCodeBase, CSharp, SolutionsIndexer) je zkopírován do `Internal\` jako internal a jiné Sunamo balíčky nereferencuje.
+Balíček je self-contained: kód dříve referencovaných balíčků (DevCodeBase, CSharp, SolutionsIndexer) je zkopírován do `_sunamo\` (jen použité členy, převážně internal) a jiné Sunamo balíčky nereferencuje.
