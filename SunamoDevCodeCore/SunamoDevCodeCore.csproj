@@ -3,7 +3,7 @@
     <TargetFrameworks>net10.0;net9.0;net8.0;netstandard2.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <Platforms>AnyCPU;x86</Platforms>
-    <Version>26.9.29.5</Version>
+    <Version>26.9.30.6</Version>
     <Description>Core utilities and helpers extracted from SunamoDevCode.</Description>
     <PackageReleaseNotes>Dokonceni rozdeleni SunamoDevCode: Boilerplate CRLF fix</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
