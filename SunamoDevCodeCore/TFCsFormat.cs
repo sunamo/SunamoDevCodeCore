@@ -11,20 +11,20 @@ public class TFCsFormat
     {
         var toFirstCodeElement = new List<string>();
 
-        for (var i = 0; i < lines.Count; i++)
+        for (var index = 0; index < lines.Count; index++)
         {
-            var line = lines[i];
+            var line = lines[index];
             if (classCodeElements.Any(element => line.Contains(element)))
             {
-                for (var previousIndex = i - 1; previousIndex >= 0; previousIndex--)
+                for (var previousIndex = index - 1; previousIndex >= 0; previousIndex--)
                     if (lines[previousIndex].StartsWith("//"))
-                        i--;
+                        index--;
                     else
                         break;
 
-                toFirstCodeElement = lines.Take(i).ToList();
+                toFirstCodeElement = lines.Take(index).ToList();
 
-                for (var j = toFirstCodeElement.Count - 1; j >= 0; j--) lines.RemoveAt(0);
+                for (var skipIndex = toFirstCodeElement.Count - 1; skipIndex >= 0; skipIndex--) lines.RemoveAt(0);
 
                 break;
             }
@@ -68,30 +68,30 @@ public class TFCsFormat
         var toFirstCodeElement = OnlyToFirst(mutableLines);
 
         var usings = new List<string>();
-        var ns = string.Empty;
+        var namespaceLine = string.Empty;
 
         foreach (var item in toFirstCodeElement)
             if (item.StartsWith("using "))
                 usings.Add(item);
             else if (item.StartsWith("namespace "))
-                ns = item;
+                namespaceLine = item;
 
-        ns = ns.TrimEnd(';') + ";";
-        if (ns == string.Empty)
+        namespaceLine = namespaceLine.TrimEnd(';') + ";";
+        if (namespaceLine == string.Empty)
         {
             // todo doplnit ns
         }
 
         if (usings.Count != 0) usings.Add("");
 
-        var wasBlockScopedNs = !ns.EndsWith(";");
+        var wasBlockScopedNs = !namespaceLine.EndsWith(";");
 
         if (wasBlockScopedNs)
         {
             ThrowEx.Custom("Block scoped namespace is not allowed.");
         }
 
-        usings.Insert(0, ns);
+        usings.Insert(0, namespaceLine);
         usings.Insert(1, "");
 
         TrimWhiteSpaceRowFromEnd(mutableLines);
@@ -116,13 +116,13 @@ public class TFCsFormat
 
     public static void TrimWhiteSpaceRowFromEnd(List<string> lines)
     {
-        for (int i = lines.Count - 1; i >= 0; i--)
+        for (int index = lines.Count - 1; index >= 0; index--)
         {
-            if (!string.IsNullOrWhiteSpace(lines[i]))
+            if (!string.IsNullOrWhiteSpace(lines[index]))
             {
                 break;
             }
-            lines.RemoveAt(i);
+            lines.RemoveAt(index);
         }
     }
 }

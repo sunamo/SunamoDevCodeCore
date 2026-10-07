@@ -13,9 +13,9 @@ public class CsprojsInSolution
 
         TestBothHaveSameLength();
 
-        for (int i = 0; i < CsprojFolderPaths.Count; i++)
+        for (int index = 0; index < CsprojFolderPaths.Count; index++)
         {
-            dictionary.Add(CsprojFolderPaths[i], CsprojPaths[i]);
+            dictionary.Add(CsprojFolderPaths[index], CsprojPaths[index]);
         }
 
         return dictionary;

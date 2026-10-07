@@ -13,9 +13,9 @@ public class TFCsFormatTests
     public async Task WriteAllLinesTest()
     {
         const string path = @"E:\vs\Projects\PlatformIndependentNuGetPackages\SunamoGetFiles\_sunamo\XlfKeys.cs";
-        var l = await File.ReadAllLinesAsync(path);
-        l[0] = "namespace SunamoGetFiles._sunamo;";
-        await TFCsFormat.WriteAllLines(path, l);
+        var lines = await File.ReadAllLinesAsync(path);
+        lines[0] = "namespace SunamoGetFiles._sunamo;";
+        await TFCsFormat.WriteAllLines(path, lines);
 
 
     }
@@ -24,9 +24,9 @@ public class TFCsFormatTests
     public async Task WriteAllLinesTest2()
     {
         const string path = @"E:\vs\Projects\sunamo.net\Lyrics\ProgramControllers.cs";
-        var l = (await File.ReadAllLinesAsync(path)).ToList();
-        l.Insert(3, "");
-        await TFCsFormat.WriteAllLines(path, l);
+        var lines = (await File.ReadAllLinesAsync(path)).ToList();
+        lines.Insert(3, "");
+        await TFCsFormat.WriteAllLines(path, lines);
 
 
     }

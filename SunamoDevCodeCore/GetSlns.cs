@@ -9,15 +9,15 @@ public class GetSlns
     {
         var parameter = @"E:\vs\";
         FoldersWithSolutions.PairProjectFolderWithEnum(logger, parameter);
-        FoldersWithSolutions d = new FoldersWithSolutions(logger, parameter, null!, false);
-        d.Reload(logger, parameter, null!);
+        FoldersWithSolutions foldersWithSolutions = new FoldersWithSolutions(logger, parameter, null!, false);
+        foldersWithSolutions.Reload(logger, parameter, null!);
 
-        List<SolutionFolder> solutionFolders = d.GetSolutions(RepositoryLocal.Vs17);
+        List<SolutionFolder> solutionFolders = foldersWithSolutions.GetSolutions(RepositoryLocal.Vs17);
         if (onlyCs)
         {
-            solutionFolders = solutionFolders.Where(d => d.TypeProjectFolder == ProjectsTypes.Cs).ToList();
+            solutionFolders = solutionFolders.Where(solutionFolder => solutionFolder.TypeProjectFolder == ProjectsTypes.Cs).ToList();
         }
 
-        return solutionFolders.Select(d => d.FullPathFolder).ToList();
+        return solutionFolders.Select(solution => solution.FullPathFolder).ToList();
     }
 }

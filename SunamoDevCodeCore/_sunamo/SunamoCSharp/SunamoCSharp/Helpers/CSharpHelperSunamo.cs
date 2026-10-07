@@ -6,20 +6,20 @@ internal class CSharpHelperSunamo
     public static FromToList DetectFromToString(string text)
     {
         List<int> quoteIndices = null!;// SH.ReturnOccurencesOfString(text, "\"");
-        for (int i = quoteIndices.Count - 1; i >= 0; i--)
+        for (int index = quoteIndices.Count - 1; index >= 0; index--)
         {
-            if (text[quoteIndices[i] - 1] == '\\')
+            if (text[quoteIndices[index] - 1] == '\\')
             {
-                quoteIndices.RemoveAt(i);
+                quoteIndices.RemoveAt(index);
             }
         }
 
         ThrowEx.HasOddNumberOfElements("quoteIndices", quoteIndices);
 
         var fromToList = new FromToList();
-        for (int i = 0; i < quoteIndices.Count; i++)
+        for (int quoteIndex = 0; quoteIndex < quoteIndices.Count; quoteIndex++)
         {
-            fromToList.Ranges.Add(new FromToDC(quoteIndices[i], quoteIndices[++i]));
+            fromToList.Ranges.Add(new FromToDC(quoteIndices[quoteIndex], quoteIndices[++quoteIndex]));
         }
         return fromToList;
     }

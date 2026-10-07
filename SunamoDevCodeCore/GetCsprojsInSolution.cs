@@ -23,27 +23,27 @@ partial class GetCsprojs
         List<string> csprojPaths = [];
 
         var csprojFolderPaths = FSGetFolders.GetFoldersEveryFolderWhichContainsFiles(logger, slnFolder, "*.csproj", SearchOption.TopDirectoryOnly);
-        for (int i = csprojFolderPaths.Count - 1; i >= 0; i--)
+        for (int index = csprojFolderPaths.Count - 1; index >= 0; index--)
         {
-            var fi = csprojFolderPaths[i];
-            var csprojs = FSGetFiles.GetFilesEveryFolder(logger, fi, "*.csproj", SearchOption.TopDirectoryOnly).ToList();
+            var csprojFolderPath = csprojFolderPaths[index];
+            var csprojs = FSGetFiles.GetFilesEveryFolder(logger, csprojFolderPath, "*.csproj", SearchOption.TopDirectoryOnly).ToList();
 
             if (csprojs.Count == 0)
             {
-                Error("No csproj in " + fi);
-                csprojFolderPaths.RemoveAt(i);
+                Error("No csproj in " + csprojFolderPath);
+                csprojFolderPaths.RemoveAt(index);
             }
             else if (csprojs.Count > 1)
             {
-                foreach (var item in csprojs.Where(d => d.Contains(" - Backup")))
+                foreach (var item in csprojs.Where(csproj => csproj.Contains(" - Backup")))
                 {
                     File.Delete(item);
                 }
-                csprojs = csprojs.Where(d => !d.Contains(" - Backup")).ToList();
+                csprojs = csprojs.Where(csprojPath => !csprojPath.Contains(" - Backup")).ToList();
                 if (csprojs.Count > 1)
                 {
-                    Error("More than one csproj in " + fi);
-                    csprojFolderPaths.RemoveAt(i);
+                    Error("More than one csproj in " + csprojFolderPath);
+                    csprojFolderPaths.RemoveAt(index);
                 }
             }
             else
@@ -61,9 +61,9 @@ partial class GetCsprojs
     [Obsolete("Tato metoda se zdá být zbytečná. Její práci dělá jiná v tomto souboru.")]
     public static List<string> GetCsprojsInSolution(ILogger logger, string slnFolder)
     {
-        var f = GetFoldersWithAtLeastOneCsprojInSolution(logger, slnFolder);
-        var result = new List<string>(f.Count);
-        foreach (var item in f)
+        var foldersWithCsproj = GetFoldersWithAtLeastOneCsprojInSolution(logger, slnFolder);
+        var result = new List<string>(foldersWithCsproj.Count);
+        foreach (var item in foldersWithCsproj)
         {
             result.Add(FSGetFiles.GetFilesEveryFolder(logger, item, "*.csproj", SearchOption.TopDirectoryOnly)[0]);
         }

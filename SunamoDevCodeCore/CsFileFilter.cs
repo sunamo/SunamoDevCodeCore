@@ -174,8 +174,8 @@ public partial class CsFileFilter : ICsFileFilter
         public static ContainsArgs FillEndFromFileList(List<string> unindexablePathEnds)
         {
             unindexablePaths = unindexablePathEnds;
-            var ea = new ContainsArgs(ContainsPattern(objFp), ContainsPattern(binFp), ContainsPattern(tildaRFFp) /*, ContainsPattern(notTranslateAbleFp)*/);
-            return ea;
+            var containsArgs = new ContainsArgs(ContainsPattern(objFp), ContainsPattern(binFp), ContainsPattern(tildaRFFp) /*, ContainsPattern(notTranslateAbleFp)*/);
+            return containsArgs;
         }
 
         private static bool ContainsPattern(string pattern)
@@ -215,8 +215,8 @@ public partial class CsFileFilter : ICsFileFilter
         public static EndArgs FillEndFromFileList(List<string> unindexablePathEnds)
         {
             unindexablePaths = unindexablePathEnds;
-            var ea = new EndArgs(ContainsPattern(designerCsPp), ContainsPattern(xamlCsPp), ContainsPattern(sharedCsPp), ContainsPattern(iCsPp) /*, ContainsPattern(gICsPp)*/, ContainsPattern(gCsPp), ContainsPattern(tmpPp), ContainsPattern(TMPPp), ContainsPattern(DesignerCsPp));
-            return ea;
+            var endArgs = new EndArgs(ContainsPattern(designerCsPp), ContainsPattern(xamlCsPp), ContainsPattern(sharedCsPp), ContainsPattern(iCsPp) /*, ContainsPattern(gICsPp)*/, ContainsPattern(gCsPp), ContainsPattern(tmpPp), ContainsPattern(TMPPp), ContainsPattern(DesignerCsPp));
+            return endArgs;
         }
 
         private static bool ContainsPattern(string pattern)

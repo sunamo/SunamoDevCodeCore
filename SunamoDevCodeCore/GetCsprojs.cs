@@ -12,15 +12,15 @@ public partial class GetCsprojs
 
         if (!__NotCore_Projects)
         {
-            slns = slns.Where(d => !d.Contains("__NotCore_Projects")).ToList();
+            slns = slns.Where(sln => !sln.Contains("__NotCore_Projects")).ToList();
         }
         if (!__NotCoreWeb_Projects)
         {
-            slns = slns.Where(d => !d.Contains("__NotCoreWeb_Projects")).ToList();
+            slns = slns.Where(webSln => !webSln.Contains("__NotCoreWeb_Projects")).ToList();
         }
         if (!__OnlyWindowsCore_Projects)
         {
-            slns = slns.Where(d => !d.Contains("__OnlyWindowsCore_Projects")).ToList();
+            slns = slns.Where(windowsSln => !windowsSln.Contains("__OnlyWindowsCore_Projects")).ToList();
         }
 
         List<string> result = [];
@@ -35,19 +35,19 @@ public partial class GetCsprojs
     public static List<string> GetFoldersWithAtLeastOneCsprojInSolution(ILogger logger, string slnFolder)
     {
         var folders = FSGetFolders.GetFoldersEveryFolderWhichContainsFiles(logger, slnFolder, "*.csproj", SearchOption.TopDirectoryOnly);
-        for (int i = folders.Count - 1; i >= 0; i--)
+        for (int index = folders.Count - 1; index >= 0; index--)
         {
-            var csprojs = FSGetFiles.GetFilesEveryFolder(logger, folders[i], "*.csproj", SearchOption.TopDirectoryOnly).ToList();
+            var csprojs = FSGetFiles.GetFilesEveryFolder(logger, folders[index], "*.csproj", SearchOption.TopDirectoryOnly).ToList();
 
             if (csprojs.Count == 0)
             {
                 Error("No csproj");
-                folders.RemoveAt(i);
+                folders.RemoveAt(index);
             }
             else if (csprojs.Count > 1)
             {
                 Error("More than one csproj");
-                folders.RemoveAt(i);
+                folders.RemoveAt(index);
             }
         }
 
@@ -72,21 +72,21 @@ public partial class GetCsprojs
 
     public static Dictionary<string, string> GetCsprojsAllDict(ILogger logger)
     {
-        Dictionary<string, string> d = [];
+        Dictionary<string, string> result = [];
 
         var csprojs = GetCsprojsAll(logger);
         foreach (var item in csprojs)
         {
-            var fn = Path.GetFileName(item);
+            var fileName = Path.GetFileName(item);
 
-            if (fn == "Runner.csproj")
+            if (fileName == "Runner.csproj")
             {
                 continue;
             }
 
-            d.Add(fn, item);
+            result.Add(fileName, item);
         }
 
-        return d;
+        return result;
     }
 }
