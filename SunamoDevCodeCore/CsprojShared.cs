@@ -31,9 +31,9 @@ public class CsprojShared
                     // is csproj
                     return false;
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    logger.LogWarning($"{slnPath} cannot be deleted: " + Exceptions.TextOfExceptions(ex));
+                    logger.LogWarning($"{slnPath} cannot be deleted: " + Exceptions.TextOfExceptions(exception));
                 }
             }
             else if (whatIsExcepted == WhatIsExcepted.Sln)
@@ -44,9 +44,9 @@ public class CsprojShared
                     // is sln
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception fallbackException)
                 {
-                    logger.LogWarning($"{csprojPath} cannot be deleted: " + Exceptions.TextOfExceptions(ex));
+                    logger.LogWarning($"{csprojPath} cannot be deleted: " + Exceptions.TextOfExceptions(fallbackException));
                 }
             }
             else if (whatIsExcepted == WhatIsExcepted.Both)

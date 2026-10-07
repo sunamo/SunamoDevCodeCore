@@ -64,21 +64,21 @@ public class SunamoDevCodeHelper
         if (!isIncludingGitFiles)
         {
             wrapped = SH.WrapWith(VisualStudioTempFse.GitFolderName, "\"");
-            files.RemoveAll(d => d.Contains(wrapped));
+            files.RemoveAll(file => file.Contains(wrapped));
         }
 
         if (!isIncludingDownloadedFolders)
             foreach (var item in VisualStudioTempFse.FoldersInSolutionDownloaded)
             {
                 wrapped = SH.WrapWithBs(item);
-                files.RemoveAll(d => d.Contains(wrapped));
+                files.RemoveAll(filePath => filePath.Contains(wrapped));
             }
 
         if (!isIncludingFoldersToDelete)
             foreach (var item in VisualStudioTempFse.FoldersInSolutionToDelete)
             {
                 wrapped = SH.WrapWithBs(item);
-                files.RemoveAll(d => d.Contains(wrapped));
+                files.RemoveAll(fileToRemove => fileToRemove.Contains(wrapped));
             }
     }
 
@@ -146,7 +146,7 @@ public class SunamoDevCodeHelper
         if (!add)
         {
             var firstInt = -1;
-            var i = 0;
+            var index = 0;
             foreach (var item in between)
             {
                 if (char.IsLower(item))
@@ -159,7 +159,7 @@ public class SunamoDevCodeHelper
                 }
                 else if (char.IsNumber(item))
                 {
-                    if (firstInt == -1) firstInt = i;
+                    if (firstInt == -1) firstInt = index;
                 }
                 else
                 {
@@ -167,7 +167,7 @@ public class SunamoDevCodeHelper
                     break;
                 }
 
-                i++;
+                index++;
             }
 
             var prefix = between;

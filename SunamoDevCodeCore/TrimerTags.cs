@@ -26,9 +26,9 @@ public static class TrimerTags
     {
         string? endingTag = null;
 
-        for (var i = 0; i < tagsWrapping.Count; i++)
+        for (var index = 0; index < tagsWrapping.Count; index++)
         {
-            var item = tagsWrapping[i];
+            var item = tagsWrapping[index];
             if (html.StartsWith(item))
             {
                 endingTag = item.Replace("<", "<" + "/");
@@ -61,6 +61,6 @@ public static class TrimerTags
 
     private static void WrapWithBracket(List<string> tagsWrapping)
     {
-        for (var i = 0; i < tagsWrapping.Count; i++) tagsWrapping[i] = "<" + tagsWrapping[i] + ">";
+        for (var index = 0; index < tagsWrapping.Count; index++) tagsWrapping[index] = "<" + tagsWrapping[index] + ">";
     }
 }

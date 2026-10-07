@@ -26,14 +26,14 @@ internal class SolutionsIndexerHelper
                 break;
             }
 
-            var fn = Path.GetFileName(item);
-            if (fn.StartsWith(SolutionsIndexerConsts.VisualStudio + " "))
+            var fileName = Path.GetFileName(item);
+            if (fileName.StartsWith(SolutionsIndexerConsts.VisualStudio + " "))
             {
                 tokens.Add(Path.GetFileName(item.TrimEnd('\\')).Replace(SolutionsIndexerConsts.VisualStudio + " ", ""));
                 break;
             }
 
-            if (fn == "_")
+            if (fileName == "_")
             {
                 break;
             }
@@ -81,9 +81,9 @@ internal class SolutionsIndexerHelper
         if (Directory.Exists(path))
         {
             var files = FSGetFiles.GetFiles(logger, path, "*.xaml", System.IO.SearchOption.TopDirectoryOnly, new GetFilesArgsDC { TrimA1AndLeadingBs = true });
-            for (int i = 0; i < files.Count; i++)
+            for (int index = 0; index < files.Count; index++)
             {
-                files[i] = Path.GetFileNameWithoutExtension(files[i]);
+                files[index] = Path.GetFileNameWithoutExtension(files[index]);
             }
             //files = Path.GetFileNamesWoExtension(files);
             foreach (var item in files)

@@ -66,10 +66,10 @@ public class ConstsManager
                 ThrowEx.DifferentCountInLists("keysAll", keysAll, "valuesAll", valuesAll);
         }
 
-        for (var i = 0; i < keysAll.Count; i++)
+        for (var index = 0; index < keysAll.Count; index++)
         {
-            var key = keysAll[i];
-            var constantValue = valuesAll[i];
+            var key = keysAll[index];
+            var constantValue = valuesAll[index];
 
             if (shouldIncludeInXlfKeys(key))
             {

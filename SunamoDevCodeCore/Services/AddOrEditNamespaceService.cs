@@ -53,19 +53,19 @@ public class AddOrEditNamespaceService
         // EN: Find all namespace lines and remove duplicates (keep only the first one)
         // CZ: Najdi všechny namespace řádky a odstraň duplikáty (zachovej pouze první)
         var nsLines = new List<int>();
-        for (int i = 0; i < list.Count; i++)
+        for (int index = 0; index < list.Count; index++)
         {
-            if (list[i].StartsWith("namespace ") && list[i].EndsWith(";"))
+            if (list[index].StartsWith("namespace ") && list[index].EndsWith(";"))
             {
-                nsLines.Add(i);
+                nsLines.Add(index);
             }
         }
 
         // EN: Remove from the end to avoid index shifting
         // CZ: Odstraňuj od konce aby se neposunuly indexy
-        for (int i = nsLines.Count - 1; i > 0; i--)
+        for (int lineIndex = nsLines.Count - 1; lineIndex > 0; lineIndex--)
         {
-            list.RemoveAt(nsLines[i]);
+            list.RemoveAt(nsLines[lineIndex]);
         }
         return list;
     }
@@ -84,19 +84,19 @@ public class AddOrEditNamespaceService
         var isNsOuter = false;
         var namespaceLineIndex = -1;
         RemoveEmptyLinesService removeEmptyLinesService = new RemoveEmptyLinesService();
-        for (var i = 0; i < lines.Count; i++)
+        for (var index = 0; index < lines.Count; index++)
         {
             // .Trim() tu nemůže být protože pak mi to ořezává celý soubor a musím to znovu formátovat
-            lines[i] = lines[i];
-            var list = lines[i];
+            lines[index] = lines[index];
+            var list = lines[index];
             isNsOuter = list.StartsWith("namespace");
             if (isNsOuter)
             {
                 //isNsOuter = isNs;
-                namespaceLineIndex = i;
+                namespaceLineIndex = index;
                 break;
             }
-            if (classCodeElements.Any(d => list.Contains(d)))
+            if (classCodeElements.Any(codeElement => list.Contains(codeElement)))
             {
                 break;
             }
@@ -111,10 +111,10 @@ public class AddOrEditNamespaceService
         if (namespaceLineIndex != -1 && lines[namespaceLineIndex].Trim() == "namespace")
         {
             // kontrola zda je pod #else správný NS
-            var dx = lines.IndexOf("#else");
-            if (lines[dx + 1] != newNs)
+            var elseIndex = lines.IndexOf("#else");
+            if (lines[elseIndex + 1] != newNs)
             {
-                lines[dx + 1] = newNs;
+                lines[elseIndex + 1] = newNs;
             }
         }
         else
@@ -186,23 +186,23 @@ public class AddOrEditNamespaceService
         //var list = (await TF.ReadAllLines(item)).ToList();
         List<int> dxNs = new List<int>();
         int dxElse = -1;
-        for (int i = 0; i < list.Count; i++)
+        for (int index = 0; index < list.Count; index++)
         {
-            var line = list[i];
+            var line = list[index];
             // chyba byla tady že namespace bylo s mezerou. pak mi to nevrátilo tu v #if
             if (line.StartsWith("namespace"))
             {
-                dxNs.Add(i);
+                dxNs.Add(index);
             }
             if (line == "#else")
             {
-                dxElse = i + 1;
+                dxElse = index + 1;
             }
             if (dxElse != -1 && dxNs.Any())
             {
                 break;
             }
-            if (classCodeElements.Any(d => line.Contains(d)))
+            if (classCodeElements.Any(codeElement => line.Contains(codeElement)))
             {
                 break;
             }
@@ -222,7 +222,7 @@ public class AddOrEditNamespaceService
                 lines.Add(list[item2]);
             }
             // seřadím od nejmenší k největší
-            var ordered = lines.OrderBy(d => d.Length).Skip(1);
+            var ordered = lines.OrderBy(orderedLine => orderedLine.Length).Skip(1);
             foreach (var item3 in ordered)
             {
                 list.Remove(item3);

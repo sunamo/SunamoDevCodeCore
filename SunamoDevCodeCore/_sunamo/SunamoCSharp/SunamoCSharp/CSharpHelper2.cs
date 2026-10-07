@@ -87,9 +87,9 @@ internal static partial class CSharpHelper
     public static List<string> RemoveLineComments(List<string> list)
     {
         //List<string> list = CastHelper.ToListString(listOrString);
-        for (int i = list.Count - 1; i >= 0; i--)
+        for (int index = list.Count - 1; index >= 0; index--)
         {
-            list[i] = SHParts.RemoveAfterFirst(list[i], "//");
+            list[index] = SHParts.RemoveAfterFirst(list[index], "//");
         }
 
         CA.RemoveStringsEmpty2(list);
@@ -103,12 +103,12 @@ internal static partial class CSharpHelper
 
     public static string RemoveBlockComments(string str)
     {
-        str = Regex.Replace(str, blockComments + "|" + lineComments + "|" + strings + "|" + verbatimStrings, me =>
+        str = Regex.Replace(str, blockComments + "|" + lineComments + "|" + strings + "|" + verbatimStrings, match =>
         {
-            if (me.Value.StartsWith("/*") || me.Value.StartsWith("//"))
-                return me.Value.StartsWith("//") ? Environment.NewLine : "";
+            if (match.Value.StartsWith("/*") || match.Value.StartsWith("//"))
+                return match.Value.StartsWith("//") ? Environment.NewLine : "";
             // Keep the literal strings
-            return me.Value;
+            return match.Value;
         }, RegexOptions.Singleline);
         return str;
     }
