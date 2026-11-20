@@ -1,6 +1,5 @@
 namespace SunamoDevCodeCore.Data;
 
-// Variable names have been checked and replaced with self-descriptive names
 public class CsprojsInSolution
 {
     public List<string> CsprojFolderPaths { get; set; } = null!;

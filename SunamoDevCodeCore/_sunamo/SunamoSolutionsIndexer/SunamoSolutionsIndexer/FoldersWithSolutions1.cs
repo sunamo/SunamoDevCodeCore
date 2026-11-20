@@ -1,6 +1,5 @@
 namespace SunamoDevCodeCore._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer;
 
-// Variable names have been checked and replaced with self-descriptive names
 internal partial class FoldersWithSolutions
 {
     // toSelling can be null
