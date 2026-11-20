@@ -68,7 +68,7 @@ public class AddOrEditNamespaceService
     private List<string> AddNamespaceIfIsMissingInCs(List<string> lines, string newNs)
     {
         // I put this here when I was being dumb and was working in the console on a nonexistent path. I wondered how it worked in the program. So it was not debug vs release as I originally thought! Again I was looking for the problem elsewhere than where it was!
-        // todo napsat testy na toto
+        // todo write tests for this
         var isNsOuter = false;
         var namespaceLineIndex = -1;
         RemoveEmptyLinesService removeEmptyLinesService = new RemoveEmptyLinesService();
@@ -124,7 +124,7 @@ public class AddOrEditNamespaceService
                         lines[0] = lines[0].TrimStart('{');
                         lines[lines.Count - 1] = lines[lines.Count - 1].TrimEnd('}');
                     }
-                    #region Tohle jsem nemusel dělat, od toho tu mám už TFCsFormat
+                    #region I did not need to do this, I already have TFCsFormat for it
                     lines.RemoveAt(namespaceLineIndex);
                     lines.Insert(0, "");
                     lines.Insert(0, "namespace " + newNs + ";");

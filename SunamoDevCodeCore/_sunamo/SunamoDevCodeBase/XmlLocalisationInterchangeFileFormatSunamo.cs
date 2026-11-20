@@ -10,7 +10,7 @@ internal class XmlLocalisationInterchangeFileFormatSunamo
         return SH.GetTextBetweenSimple(line, Cs, eqBs, false);
     }
 
-    #region Mám už tady metodu GetKeysInCsWithRLDataEn, proto je toto zbytečné
+    #region I already have the method GetKeysInCsWithRLDataEn here, so this is unnecessary
 
 
 

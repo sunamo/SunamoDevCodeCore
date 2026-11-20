@@ -79,7 +79,7 @@ public class TFCsFormat
         namespaceLine = namespaceLine.TrimEnd(';') + ";";
         if (namespaceLine == string.Empty)
         {
-            // todo doplnit ns
+            // todo add ns
         }
 
         if (usings.Count != 0) usings.Add("");
