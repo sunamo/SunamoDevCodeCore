@@ -63,18 +63,18 @@ public class AddOrEditNamespaceService
         }
         return list;
     }
-    // Pracovní metoda která se už volá na konkrétní soubor
-    // Volána z AddNamespaceByInputFolderName
+    // Worker method that is already called on a specific file
+    // Called from AddNamespaceByInputFolderName
     private List<string> AddNamespaceIfIsMissingInCs(List<string> lines, string newNs)
     {
-        // Tohle jsem tu dal, když jsem byl dement a pracoval jsem v konzoli na neex cestě. Divil jsem se jaktože to v programu jde. Nebylo to tedy debug vs release jak jsem si původně myslel! Opět jsem hledal problém jinde než byl!
+        // I put this here when I was being dumb and was working in the console on a nonexistent path. I wondered how it worked in the program. So it was not debug vs release as I originally thought! Again I was looking for the problem elsewhere than where it was!
         // todo napsat testy na toto
         var isNsOuter = false;
         var namespaceLineIndex = -1;
         RemoveEmptyLinesService removeEmptyLinesService = new RemoveEmptyLinesService();
         for (var index = 0; index < lines.Count; index++)
         {
-            // .Trim() tu nemůže být protože pak mi to ořezává celý soubor a musím to znovu formátovat
+            // .Trim() cannot be here because it would trim the whole file and I would have to reformat it again
             lines[index] = lines[index];
             var list = lines[index];
             isNsOuter = list.StartsWith("namespace");
@@ -87,12 +87,12 @@ public class AddOrEditNamespaceService
             {
                 break;
             }
-            // vůbec nevím k čemu jsem tu dal tuto konstrukci
+            // I have no idea why I put this construct here
         }
-        // todo zde je problém. přidává mi to NS i když už je v #elif. stačí potom zakomentovat RemoveFileScopedNamespaceWhenIsInSharpIf
+        // todo there is a problem here. it adds NS even though it is already in #elif. then it is enough to comment out RemoveFileScopedNamespaceWhenIsInSharpIf
         if (namespaceLineIndex != -1 && lines[namespaceLineIndex].Trim() == "namespace")
         {
-            // kontrola zda je pod #else správný NS
+            // check whether the correct NS is under #else
             var elseIndex = lines.IndexOf("#else");
             if (lines[elseIndex + 1] != newNs)
             {
@@ -101,7 +101,7 @@ public class AddOrEditNamespaceService
         }
         else
         {
-            // pokud nějaký řádek začíná namespace
+            // if any line starts with namespace
             if (!isNsOuter)
             {
                 AddNamespaceOnBegin(newNs, lines);
@@ -136,8 +136,8 @@ public class AddOrEditNamespaceService
                 }
             }
         }
-        //// u jiných přidává prázdný řádek protože smazal }
-        //// Tohle jsem tu dal, když jsem byl dement a pracoval jsem v konzoli na neex cestě. Divil jsem se jaktože to v programu jde. Nebylo to tedy debug vs release jak jsem si původně myslel! Opět jsem hledal problém jinde než byl!
+        //// for others it adds an empty line because it deleted }
+        //// I put this here when I was being dumb and was working in the console on a nonexistent path. I wondered how it worked in the program. So it was not debug vs release as I originally thought! Again I was looking for the problem elsewhere than where it was!
         ////if (item.EndsWith("XmlGenerator.cs"))
         ////{
         ////    if (temp != text)
@@ -152,7 +152,7 @@ public class AddOrEditNamespaceService
         return lines;
     }
     public readonly List<string> classCodeElements = new List<string>() { "class ", "interface ", "delegate", "enum ", "struct " };
-    // FUnguje to OK, prošel jsem si všechny soubory před commitem
+    // It works OK, I went through all the files before the commit
     private async Task<List<string>> RemoveFileScopedNamespaceWhenIsInSharpIf(List<string> list)
     {
         List<int> dxNs = new List<int>();
@@ -160,7 +160,7 @@ public class AddOrEditNamespaceService
         for (int index = 0; index < list.Count; index++)
         {
             var line = list[index];
-            // chyba byla tady že namespace bylo s mezerou. pak mi to nevrátilo tu v #if
+            // the error was here: the namespace had a space. then it did not return me the one in #if
             if (line.StartsWith("namespace"))
             {
                 dxNs.Add(index);
@@ -180,7 +180,7 @@ public class AddOrEditNamespaceService
         }
         if (dxElse != -1 && dxNs.Count == 1)
         {
-            // tady nevím jestli to je správně. mám jen jeden řádek začínající namespace ale chci ho odstranit
+            // here I do not know if it is correct. I have only one line starting with namespace but I want to remove it
             // proto to zakomentuji
         }
         else if (dxNs.Count > 1)
@@ -190,18 +190,18 @@ public class AddOrEditNamespaceService
             {
                 lines.Add(list[item2]);
             }
-            // seřadím od nejmenší k největší
+            // I sort from smallest to largest
             var ordered = lines.OrderBy(orderedLine => orderedLine.Length).Skip(1);
             foreach (var item3 in ordered)
             {
                 list.Remove(item3);
             }
-            // Řádky jen odstraňuje, není nutné formátovat
-            // Zde se zapíšou jen změny - je to v else if
+            // It only removes lines, no formatting is needed
+            // Only the changes are written here - it is in the else if
         }
         return list;
     }
-    // Přidá nový file scoped namespace na začátek souboru
+    // Adds a new file scoped namespace at the start of the file
     private void AddNamespaceOnBegin(string newNs, List<string> lines)
     {
         if (lines.Count > 0)

@@ -1,7 +1,7 @@
 namespace SunamoDevCodeCore.Helpers;
 
-// Jednotné místo pro remove commentů odevšad
-// protože jsem chtěl odst # a nemohl jsem si vzpomenout kde se používají
+// Single place for removing comments from everywhere
+// because I wanted paragraph # and could not remember where they are used
 public class RemoveCommentsHelper
 {
     public static string Powershell(string text)

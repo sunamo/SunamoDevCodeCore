@@ -2,7 +2,7 @@ namespace SunamoDevCodeCore;
 
 partial class GetCsprojs
 {
-    // Rozdíl oproti GetCsprojInSolution je že vrací v objektu co je z GetCsprojInSolution v Tuple
+    // The difference from GetCsprojInSolution is that it returns in the object what GetCsprojInSolution returns in a Tuple
     public static CsprojsInSolution GetCsprojInSolutionClass(ILogger logger, string slnFolder, bool automaticallyAddToUniqueCsprojs = true)
     {
         var (csprojNames, csprojPaths) = GetCsprojInSolution(logger, slnFolder);
@@ -15,7 +15,7 @@ partial class GetCsprojs
         return result;
     }
 
-    // Rozdíl oproti GetCsprojInSolution je že vrací v objektu co je z GetCsprojInSolution v Tuple
+    // The difference from GetCsprojInSolution is that it returns in the object what GetCsprojInSolution returns in a Tuple
     // 1 - csprojFolderPaths
     // 2 - csprojPaths
     public static (List<string>, List<string>) GetCsprojInSolution(ILogger logger, string slnFolder)

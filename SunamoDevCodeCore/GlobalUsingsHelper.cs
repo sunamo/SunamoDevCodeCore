@@ -1,7 +1,7 @@
 namespace SunamoDevCodeCore;
 
-// Druhá část je v ToNugets
-// Vložit sem jak toto šílenství s nugety skončí
+// The second part is in ToNugets
+// Insert here how this madness with nugets ends
 public class GlobalUsingsHelper
 {
     public const string globalUsing = "global using ";

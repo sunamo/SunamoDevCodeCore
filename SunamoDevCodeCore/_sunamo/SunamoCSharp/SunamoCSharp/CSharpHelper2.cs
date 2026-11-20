@@ -29,11 +29,11 @@ internal static partial class CSharpHelper
                     if (current == '*' && next == '/')
                     {
                         inMultiLineComment = false;
-                        reader.Read(); // Přečteme '/'
+                        reader.Read(); // We read '/'
                     }
                     else if (current == '\n')
                     {
-                        output += current; // Přidáme nový řádek do výstupu
+                        output += current; // We add a new line to the output
                     }
                 }
                 else
@@ -41,12 +41,12 @@ internal static partial class CSharpHelper
                     if (current == '/' && next == '/')
                     {
                         inSingleLineComment = true;
-                        reader.Read(); // Přečteme '/'
+                        reader.Read(); // We read '/'
                     }
                     else if (current == '/' && next == '*')
                     {
                         inMultiLineComment = true;
-                        reader.Read(); // Přečteme '*'
+                        reader.Read(); // We read '*'
                     }
                     else
                     {
@@ -76,7 +76,7 @@ internal static partial class CSharpHelper
             listOrString = SHGetLines.GetLines(RemoveBlockComments(string.Join(Environment.NewLine, listOrString)));
         }
 
-        //jak jsem mohl být takový debil argument dát to tady - na co tady trimovat?
+        // how could I be such an idiot to put the argument here - what is there to trim here?
         return listOrString;
     }
 

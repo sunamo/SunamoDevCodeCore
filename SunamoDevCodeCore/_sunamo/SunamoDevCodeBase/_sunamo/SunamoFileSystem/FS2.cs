@@ -58,7 +58,7 @@ internal partial class FS
 
     // No direct edit
     // Returns with extension
-    // POZOR: Na rozdíl od stejné metody v sunamo tato metoda vrací úplně nové pole a nemodifikuje A1
+    // WARNING: Unlike the same method in sunamo, this method returns a completely new array and does not modify A1
     internal static List<string> OnlyNamesNoDirectEdit(List<string> filePaths)
     {
         var fileNames = new List<string>(filePaths.Count);

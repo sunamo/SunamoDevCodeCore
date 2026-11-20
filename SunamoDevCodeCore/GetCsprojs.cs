@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 public partial class GetCsprojs
 {
-    // Vrátí plné cesty k složce řešení
+    // Returns the full paths to the solution folder
     public static List<string> GetCsprojsAll(ILogger logger, bool __NotCore_Projects = false, bool __NotCoreWeb_Projects = false, bool __OnlyWindowsCore_Projects = false)
     {
         var slns = GetSlns.GetSolutions(logger);

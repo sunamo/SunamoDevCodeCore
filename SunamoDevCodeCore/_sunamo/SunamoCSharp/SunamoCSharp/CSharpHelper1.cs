@@ -4,7 +4,7 @@ namespace SunamoDevCodeCore._sunamo.SunamoCSharp.SunamoCSharp;
 internal static partial class CSharpHelper
 {
 
-    // Vrátí true i když obsahuje kód bez středníku (např. prázdnou třídu)
+    // Returns true even if it contains code without a semicolon (e.g. an empty class)
     public static bool IsEmptyCommentedOrOnlyWithNamespace(string fnwoe, List<string> linesOriginal, Action<List<string>> RemoveBetweenIfAndEndif, List<string> csWithSharpIf)
     {
         var lines = linesOriginal.ToList();
