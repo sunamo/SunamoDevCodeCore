@@ -1,10 +1,23 @@
 namespace SunamoDevCodeCore.Data;
 
+/// <summary>
+/// Represents the csprojs in solution type.
+/// </summary>
 public class CsprojsInSolution
 {
+    /// <summary>
+    /// Gets or sets the csproj folder paths.
+    /// </summary>
     public List<string> CsprojFolderPaths { get; set; } = null!;
+    /// <summary>
+    /// Gets or sets the csproj paths.
+    /// </summary>
     public List<string> CsprojPaths { get; set; } = null!;
 
+    /// <summary>
+    /// To dictionary.
+    /// </summary>
+    /// <returns>The to dictionary result.</returns>
     public Dictionary<string, string> ToDictionary()
     {
         Dictionary<string, string> dictionary = [];
@@ -27,6 +40,10 @@ public class CsprojsInSolution
         }
     }
 
+    /// <summary>
+    /// Initializes a new instance of the intersect class.
+    /// </summary>
+    /// <param name="!">The !.</param>
     public CsprojsInSolution Intersect(CsprojsInSolution other)
     {
         CsprojFolderPaths.AddRange(other.CsprojFolderPaths);

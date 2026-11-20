@@ -1,7 +1,16 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the sunamo dev code helper type.
+/// </summary>
 public class SunamoDevCodeHelper
 {
+    /// <summary>
+    /// Try delete directory.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="directoryPath">The directory path.</param>
+    /// <returns>The try delete directory result.</returns>
     public static bool TryDeleteDirectory(ILogger logger, string directoryPath)
     {
         if (!Directory.Exists(directoryPath)) return true;
@@ -31,6 +40,12 @@ public class SunamoDevCodeHelper
         return false;
     }
 
+    /// <summary>
+    /// Copy solution.
+    /// </summary>
+    /// <param name="slnFolder">The sln folder.</param>
+    /// <param name="folderTo">The folder to.</param>
+    /// <param name="archive">The archive.</param>
     public static void CopySolution(string slnFolder, string folderTo, Action<string> archive)
     {
         var list = Directory.GetFiles(slnFolder, "*", SearchOption.AllDirectories).ToList();
@@ -53,6 +68,13 @@ public class SunamoDevCodeHelper
         archive(slnFolderTo);
     }
 
+    /// <summary>
+    /// Remove git files.
+    /// </summary>
+    /// <param name="files">The files.</param>
+    /// <param name="isIncludingGitFiles">The is including git files.</param>
+    /// <param name="isIncludingDownloadedFolders">The is including downloaded folders.</param>
+    /// <param name="isIncludingFoldersToDelete">The is including folders to delete.</param>
     public static void RemoveGitFiles(List<string> files, bool isIncludingGitFiles = true, bool isIncludingDownloadedFolders = false,
         bool isIncludingFoldersToDelete = false)
     {
@@ -79,6 +101,10 @@ public class SunamoDevCodeHelper
             }
     }
 
+    /// <summary>
+    /// Remove temporary files VS.
+    /// </summary>
+    /// <param name="files">The files.</param>
     public static void RemoveTemporaryFilesVS(List<string> files)
     {
         var list = VisualStudioTempFseWrapped.FoldersInSolutionToDelete;
@@ -110,6 +136,12 @@ public class SunamoDevCodeHelper
         return AllHtmlAttrs.list!.Contains(between.Trim());
     }
 
+    /// <summary>
+    /// Is name of html tag.
+    /// </summary>
+    /// <param name="between">The between.</param>
+    /// <param name="add">The add.</param>
+    /// <returns>The is name of html tag result.</returns>
     public static bool IsNameOfHtmlTag(string between, bool add)
     {
         string? element = null;
@@ -132,6 +164,11 @@ public class SunamoDevCodeHelper
     }
 
     // A1 normal, not lower
+    /// <summary>
+    /// Is name of control.
+    /// </summary>
+    /// <param name="between">The between.</param>
+    /// <returns>The is name of control result.</returns>
     public static bool IsNameOfControl(string between)
     {
         var add = false;

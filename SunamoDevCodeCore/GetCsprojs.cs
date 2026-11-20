@@ -2,9 +2,20 @@ namespace SunamoDevCodeCore;
 
 using Microsoft.Extensions.Logging;
 
+/// <summary>
+/// Represents the get csprojs type.
+/// </summary>
 public partial class GetCsprojs
 {
     // Returns the full paths to the solution folder
+    /// <summary>
+    /// Get csprojs all.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="__NotCore_Projects">The not core projects.</param>
+    /// <param name="__NotCoreWeb_Projects">The not core web projects.</param>
+    /// <param name="__OnlyWindowsCore_Projects">The only windows core projects.</param>
+    /// <returns>The get csprojs all result.</returns>
     public static List<string> GetCsprojsAll(ILogger logger, bool __NotCore_Projects = false, bool __NotCoreWeb_Projects = false, bool __OnlyWindowsCore_Projects = false)
     {
         var slns = GetSlns.GetSolutions(logger);
@@ -31,6 +42,12 @@ public partial class GetCsprojs
         return result;
     }
 
+    /// <summary>
+    /// Get folders with at least one csproj in solution.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="slnFolder">The sln folder.</param>
+    /// <returns>The get folders with at least one csproj in solution result.</returns>
     public static List<string> GetFoldersWithAtLeastOneCsprojInSolution(ILogger logger, string slnFolder)
     {
         var folders = FSGetFolders.GetFoldersEveryFolderWhichContainsFiles(logger, slnFolder, "*.csproj", SearchOption.TopDirectoryOnly);
@@ -58,6 +75,11 @@ public partial class GetCsprojs
         throw new Exception(errorMessage);
     }
 
+    /// <summary>
+    /// Get csproj in swd notmine and sunamo.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <returns>The get csproj in swd notmine and sunamo result.</returns>
     public static CsprojsInSolution GetCsprojInSwdNotmineAndSunamo(ILogger logger)
     {
         var PlatformIndependentNuGetPackages = GetCsprojInSolutionClass(logger, @"E:\vs\Projects\PlatformIndependentNuGetPackages\");
@@ -67,6 +89,11 @@ public partial class GetCsprojs
 
     }
 
+    /// <summary>
+    /// Get csprojs all dict.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <returns>The get csprojs all dict result.</returns>
     public static Dictionary<string, string> GetCsprojsAllDict(ILogger logger)
     {
         Dictionary<string, string> result = [];

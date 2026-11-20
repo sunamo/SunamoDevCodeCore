@@ -2,6 +2,9 @@ namespace SunamoDevCodeCore;
 
 using FileMs = File;
 
+/// <summary>
+/// Represents the TF cs format type.
+/// </summary>
 public class TFCsFormat
 {
     private static readonly List<string> classCodeElements = new()
@@ -33,16 +36,31 @@ public class TFCsFormat
         return toFirstCodeElement;
     }
 
+    /// <summary>
+    /// Write all text sync.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <param name="content">The content.</param>
     public static void WriteAllTextSync(string filePath, string content)
     {
         WriteAllText(filePath, content).GetAwaiter().GetResult();
     }
 
+    /// <summary>
+    /// Write all lines sync.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <param name="lines">The lines.</param>
     public static void WriteAllLinesSync(string filePath, IEnumerable<string> lines)
     {
         WriteAllLines(filePath, lines).GetAwaiter().GetResult();
     }
 
+    /// <summary>
+    /// Write all text.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <param name="content">The content.</param>
     public static async Task WriteAllText(string filePath, string content)
     {
         if (!filePath.EndsWith(".cs") || filePath.EndsWith("GlobalUsings.cs"))
@@ -55,6 +73,11 @@ public class TFCsFormat
         await WriteAllLines(filePath, lines);
     }
 
+    /// <summary>
+    /// Write all lines.
+    /// </summary>
+    /// <param name="filePath">The file path.</param>
+    /// <param name="lines">The lines.</param>
     public static async Task WriteAllLines(string filePath, IEnumerable<string> lines)
     {
         if (!filePath.EndsWith(".cs") || filePath.EndsWith("GlobalUsings.cs"))
@@ -114,6 +137,10 @@ public class TFCsFormat
         await FileAsync.WriteAllTextAsync(filePath, SHJoin.JoinNL(usings));
     }
 
+    /// <summary>
+    /// Trim white space row from end.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
     public static void TrimWhiteSpaceRowFromEnd(List<string> lines)
     {
         for (int index = lines.Count - 1; index >= 0; index--)

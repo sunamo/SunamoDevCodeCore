@@ -1,7 +1,15 @@
 namespace SunamoDevCodeCore.Services;
 
+/// <summary>
+/// Represents the dotnet output service type.
+/// </summary>
 public class DotnetOutputService
 {
+    /// <summary>
+    /// Get parts from dotnet build line.
+    /// </summary>
+    /// <param name="line">The line.</param>
+    /// <returns>The get parts from dotnet build line result.</returns>
     public DotnetBuildOutputLine? GetPartsFromDotnetBuildLine(string line)
     {
         if (line.StartsWith("MSBuild version"))

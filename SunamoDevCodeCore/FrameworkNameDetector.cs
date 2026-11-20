@@ -1,8 +1,17 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the framework name detector type.
+/// </summary>
 public class FrameworkNameDetector
 {
+    /// <summary>
+    /// The default identifier constant.
+    /// </summary>
     public const string DefaultIdentifier = ".NETFramework";
+    /// <summary>
+    /// The default framework version constant.
+    /// </summary>
     public const string DefaultFrameworkVersion = "v4.0";
 
     // Working only for .net fw, for sdk style return .net 4.0

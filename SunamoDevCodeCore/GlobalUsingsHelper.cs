@@ -2,11 +2,25 @@ namespace SunamoDevCodeCore;
 
 // The second part is in ToNugets
 // Insert here how this madness with nugets ends
+/// <summary>
+/// Represents the global usings helper type.
+/// </summary>
 public class GlobalUsingsHelper
 {
+    /// <summary>
+    /// The global using constant.
+    /// </summary>
     public const string globalUsing = "global using ";
+    /// <summary>
+    /// The global constant.
+    /// </summary>
     public const string global = "global ";
 
+    /// <summary>
+    /// Parse.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The parse result.</returns>
     public static ParseGlobalUsingsResult Parse(List<string> list)
     {
         var result = new ParseGlobalUsingsResult();

@@ -1,7 +1,15 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the boilerplate type.
+/// </summary>
 public class Boilerplate
 {
+    /// <summary>
+    /// C sharp cmd.
+    /// </summary>
+    /// <param name="innerMain">The inner main.</param>
+    /// <returns>The c sharp cmd result.</returns>
     public static string CSharpCmd(string innerMain)
     {
         var csharpTemplate = @"using System;
@@ -26,6 +34,14 @@ public class Boilerplate
         return stringBuilder.ToString();
     }
 
+    /// <summary>
+    /// C sharp class.
+    /// </summary>
+    /// <param name="addNamespacesLines">The add namespaces lines.</param>
+    /// <param name="className">The class name.</param>
+    /// <param name="fields">The fields.</param>
+    /// <param name="contentOfInitMethod">The content of init method.</param>
+    /// <returns>The c sharp class result.</returns>
     public static string CSharpClass(string addNamespacesLines, string className, string fields,
         string contentOfInitMethod)
     {

@@ -1,7 +1,15 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the generate json type.
+/// </summary>
 public class GenerateJson
 {
+    /// <summary>
+    /// With snake convention dict.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The with snake convention dict result.</returns>
     public static Dictionary<string, string> WithSnakeConventionDict(List<string> list)
     {
         var dictionary = new Dictionary<string, string>();
@@ -9,6 +17,11 @@ public class GenerateJson
         return dictionary;
     }
 
+    /// <summary>
+    /// With snake convention.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The with snake convention result.</returns>
     public static string WithSnakeConvention(List<string> list)
     {
         var dictionary = WithSnakeConventionDict(list);

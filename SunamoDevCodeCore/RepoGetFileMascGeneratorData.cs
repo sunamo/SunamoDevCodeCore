@@ -1,15 +1,44 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the repo get file masc generator data type.
+/// </summary>
 public class RepoGetFileMascGeneratorData
 {
+    /// <summary>
+    /// Gets or sets the cs.
+    /// </summary>
     public bool Cs { get; set; }
+    /// <summary>
+    /// Gets or sets the css.
+    /// </summary>
     public bool Css { get; set; }
+    /// <summary>
+    /// Gets or sets the js jsx.
+    /// </summary>
     public bool JsJsx { get; set; }
+    /// <summary>
+    /// Gets or sets the json.
+    /// </summary>
     public bool Json { get; set; }
+    /// <summary>
+    /// Gets or sets the scss.
+    /// </summary>
     public bool Scss { get; set; }
+    /// <summary>
+    /// Gets or sets the ts tsx.
+    /// </summary>
     public bool TsTsx { get; set; }
+    /// <summary>
+    /// Gets or sets the yaml.
+    /// </summary>
     public bool Yaml { get; set; }
 
+    /// <summary>
+    /// Numbers of.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The numbers of result.</returns>
     public int NumbersOf(bool value)
     {
         var count = 0;
@@ -23,6 +52,11 @@ public class RepoGetFileMascGeneratorData
         return count;
     }
 
+    /// <summary>
+    /// All source codes.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The all source codes result.</returns>
     public static RepoGetFileMascGeneratorData AllSourceCodes()
     {
         var argument = new RepoGetFileMascGeneratorData();
@@ -30,6 +64,11 @@ public class RepoGetFileMascGeneratorData
         return argument;
     }
 
+    /// <summary>
+    /// All to.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The all to result.</returns>
     public void AllTo(bool value)
     {
         // do it with reflection
@@ -42,6 +81,10 @@ public class RepoGetFileMascGeneratorData
         Cs = value;
     }
 
+    /// <summary>
+    /// Generate.
+    /// </summary>
+    /// <returns>The generate result.</returns>
     public string Generate()
     {
         var stringBuilder = new StringBuilder();

@@ -1,10 +1,20 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the trimer tags type.
+/// </summary>
 public static class TrimerTags
 {
     private static List<string> tagsWrapping = null!;
     private static List<string> tagsWrappingUpper = null!;
 
+    /// <summary>
+    /// Trim wrapping tag.
+    /// </summary>
+    /// <param name="html">The html.</param>
+    /// <param name="fromStart">The from start.</param>
+    /// <param name="fromEnd">The from end.</param>
+    /// <returns>The trim wrapping tag result.</returns>
     public static string TrimWrappingTag(string html, StringBuilder fromStart, StringBuilder fromEnd)
     {
         fromStart.Clear();
@@ -49,6 +59,9 @@ public static class TrimerTags
         return html;
     }
 
+    /// <summary>
+    /// Init tags wrapping.
+    /// </summary>
     public static void InitTagsWrapping()
     {
         tagsWrapping = new List<string>(["i", "b", "u"]);

@@ -3,6 +3,13 @@ namespace SunamoDevCodeCore;
 partial class GetCsprojs
 {
     // The difference from GetCsprojInSolution is that it returns in the object what GetCsprojInSolution returns in a Tuple
+    /// <summary>
+    /// Get csproj in solution class.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="slnFolder">The sln folder.</param>
+    /// <param name="automaticallyAddToUniqueCsprojs">The automatically add to unique csprojs.</param>
+    /// <returns>The get csproj in solution class result.</returns>
     public static CsprojsInSolution GetCsprojInSolutionClass(ILogger logger, string slnFolder, bool automaticallyAddToUniqueCsprojs = true)
     {
         var (csprojNames, csprojPaths) = GetCsprojInSolution(logger, slnFolder);
@@ -18,6 +25,10 @@ partial class GetCsprojs
     // The difference from GetCsprojInSolution is that it returns in the object what GetCsprojInSolution returns in a Tuple
     // 1 - csprojFolderPaths
     // 2 - csprojPaths
+    /// <summary>
+    /// Initializes a new instance of the get csproj in solution class.
+    /// </summary>
+    /// <param name="List<string>">The list string.</param>
     public static (List<string>, List<string>) GetCsprojInSolution(ILogger logger, string slnFolder)
     {
         List<string> csprojPaths = [];
@@ -58,6 +69,12 @@ partial class GetCsprojs
         return (csprojFolderPaths, csprojPaths);
     }
 
+    /// <summary>
+    /// Get csprojs in solution.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="slnFolder">The sln folder.</param>
+    /// <returns>The get csprojs in solution result.</returns>
     [Obsolete("Tato metoda se zdá být zbytečná. Její práci dělá jiná v tomto souboru.")]
     public static List<string> GetCsprojsInSolution(ILogger logger, string slnFolder)
     {

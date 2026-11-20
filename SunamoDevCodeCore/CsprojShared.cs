@@ -4,9 +4,19 @@ using Microsoft.Extensions.Logging;
 
 // Although this is from CommandsToAllCsprojs.Shared, it is useful for all CommandsToAll* projects
 // Not adding it there as a single file but as an entire csproj
+/// <summary>
+/// Represents the csproj shared type.
+/// </summary>
 public class CsprojShared
 {
     // Detects whether the folder contains a solution or csproj file. Returns true for sln, false for csproj, null for neither or both.
+    /// <summary>
+    /// Detect is sln or csproj folder.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="path">The path.</param>
+    /// <param name="whatIsExcepted">The what is excepted.</param>
+    /// <returns>The detect is sln or csproj folder result.</returns>
     public static bool? DetectIsSlnOrCsprojFolder(ILogger logger, string path, WhatIsExcepted whatIsExcepted)
     {
         if (path == null) return null;
@@ -64,11 +74,25 @@ public class CsprojShared
         return null;
     }
 
+    /// <summary>
+    /// Get csproj for folder.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="path">The path.</param>
+    /// <param name="isThrowingExceptionOrReturningNull">The is throwing exception or returning null.</param>
+    /// <returns>The get csproj for folder result.</returns>
     public static string? GetCsprojForFolder(ILogger logger, string path, bool isThrowingExceptionOrReturningNull)
     {
         return GetExtForFolder(logger, path, isThrowingExceptionOrReturningNull, "csproj");
     }
 
+    /// <summary>
+    /// Get sln for folder.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="path">The path.</param>
+    /// <param name="isThrowingExceptionOrReturningNull">The is throwing exception or returning null.</param>
+    /// <returns>The get sln for folder result.</returns>
     public static string? GetSlnForFolder(ILogger logger, string path, bool isThrowingExceptionOrReturningNull)
     {
         string? result = null;
@@ -98,6 +122,14 @@ public class CsprojShared
         return result;
     }
 
+    /// <summary>
+    /// Get ext for folder.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="path">The path.</param>
+    /// <param name="isThrowingExceptionOrReturningNull">The is throwing exception or returning null.</param>
+    /// <param name="ext">The ext.</param>
+    /// <returns>The get ext for folder result.</returns>
     public static string? GetExtForFolder(ILogger logger, string path, bool isThrowingExceptionOrReturningNull, string ext)
     {
         ext = ext.TrimStart('.');
@@ -131,6 +163,13 @@ public class CsprojShared
     }
 
 
+    /// <summary>
+    /// Has sln file in up folder.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="csprojPath">The csproj path.</param>
+    /// <param name="slnFolder">The sln folder.</param>
+    /// <returns>The has sln file in up folder result.</returns>
     public static bool HasSlnFileInUpFolder(ILogger logger, string csprojPath, out string slnFolder)
     {
         var projectFolder = Path.GetDirectoryName(csprojPath);

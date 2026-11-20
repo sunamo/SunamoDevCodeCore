@@ -1,9 +1,18 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the project type guid type.
+/// </summary>
 public static class ProjectTypeGuid
 {
+    /// <summary>
+    /// The unspecified constant.
+    /// </summary>
     public const string Unspecified = "{00000000-0000-0000-0000-000000000000}";
 
+    /// <summary>
+    /// The well known.
+    /// </summary>
     public static readonly Dictionary<string, string> WellKnown = new(StringComparer.OrdinalIgnoreCase)
     {
         { "{603C0E0B-DB56-11DC-BE95-000D561079B0}", "ASP.NET MVC" + " " + "" },

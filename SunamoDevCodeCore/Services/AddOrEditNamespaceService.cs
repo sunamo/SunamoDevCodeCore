@@ -1,7 +1,19 @@
 namespace SunamoDevCodeCore.Services;
 
+/// <summary>
+/// Represents the add or edit namespace service type.
+/// </summary>
 public class AddOrEditNamespaceService
 {
+    /// <summary>
+    /// Add or edit namespace for single file and save.
+    /// </summary>
+    /// <param name="pathToCsprojFolder">The path to csproj folder.</param>
+    /// <param name="projectName">The project name.</param>
+    /// <param name="csPath">The cs path.</param>
+    /// <param name="linesFile">The lines file.</param>
+    /// <param name="pathToSave">The path to save.</param>
+    /// <returns>The add or edit namespace for single file and save result.</returns>
     public async Task<string?> AddOrEditNamespaceForSingleFileAndSave(string pathToCsprojFolder, string projectName
         , string csPath, List<string>? linesFile = null, string? pathToSave = null)
     {
@@ -151,6 +163,9 @@ public class AddOrEditNamespaceService
         ////}
         return lines;
     }
+    /// <summary>
+    /// The class code elements.
+    /// </summary>
     public readonly List<string> classCodeElements = new List<string>() { "class ", "interface ", "delegate", "enum ", "struct " };
     // It works OK, I went through all the files before the commit
     private async Task<List<string>> RemoveFileScopedNamespaceWhenIsInSharpIf(List<string> list)

@@ -1,7 +1,13 @@
 namespace SunamoDevCodeCore;
 
+/// <summary>
+/// Represents the sunamo framework type.
+/// </summary>
 public class SunamoFramework
 {
+    /// <summary>
+    /// Html entities for non digits or letter chars.
+    /// </summary>
     public void HtmlEntitiesForNonDigitsOrLetterChars()
     {
         AllLists.InitHtmlEntitiesFullNames();
