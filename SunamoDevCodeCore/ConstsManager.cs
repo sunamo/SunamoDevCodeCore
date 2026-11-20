@@ -6,7 +6,6 @@ public class ConstsManager
 
     #region Work with consts in XlfKeys
 
-    // Add to XlfKeys.cs from xlf
     // Must manually call XlfResourcesH.SaveResouresToRL(BasePathsHelper.sunamoProject) before
     // Called externally from MiAddTranslationWhichIsntInKeys_Click
     public
@@ -27,7 +26,6 @@ public class ConstsManager
     }
 
 
-    // Get consts which exists in XlfKeys.cs
     public
         async Task<OutRef3DC<List<string>, int, List<string>>>
         GetConsts()

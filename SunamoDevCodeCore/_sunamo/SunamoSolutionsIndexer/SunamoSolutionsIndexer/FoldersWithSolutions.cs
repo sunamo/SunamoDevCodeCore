@@ -107,7 +107,7 @@ internal partial class FoldersWithSolutions
                      * 
                      * Besides, I do not remember using this anywhere.
                      */
-                    logger.LogWarning(Translate.FromKey(XlfKeys.CanTAssignToEnumTypeOfFolder) + " " + item);
+                    logger.LogWarning("Can t assign to enum type of folder" + " " + item);
                 }
                 else
                 {
@@ -116,7 +116,7 @@ internal partial class FoldersWithSolutions
             }
         }
 
-        projectTypes.Add(ProjectsTypes.Cs, XlfKeys.Projects);
+        projectTypes.Add(ProjectsTypes.Cs, "Projects");
     }
 
     public static List<string> OnlyRealLoadedSolutionsFolders { get; set; } = new List<string>();
