@@ -9,16 +9,6 @@ using System.Threading.Tasks;
 
 public class TFCsFormatTests
 {
-    [Fact]
-    public async Task WriteAllLinesTest()
-    {
-        const string path = @"E:\vs\Projects\PlatformIndependentNuGetPackages\SunamoGetFiles\_sunamo\XlfKeys.cs";
-        var lines = await File.ReadAllLinesAsync(path);
-        lines[0] = "namespace SunamoGetFiles._sunamo;";
-        await TFCsFormat.WriteAllLines(path, lines);
-
-
-    }
 
     [Fact]
     public async Task WriteAllLinesTest2()

@@ -64,7 +64,6 @@ global using SunamoDevCodeCore._sunamo.SunamoSolutionsIndexer.SunamoSolutionsInd
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoData.Data;
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoEnums.Enums;
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoConverters.Converts;
-global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoI18N;
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoXlf;
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoValues.All;
 global using SunamoDevCodeCore._sunamo.SunamoDevCodeBase._sunamo.SunamoValues.Values;
