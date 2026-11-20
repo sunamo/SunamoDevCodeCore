@@ -77,16 +77,13 @@ internal static partial class CSharpHelper
             listOrString = SHGetLines.GetLines(RemoveBlockComments(string.Join(Environment.NewLine, listOrString)));
         }
 
-        //var list = CastHelper.ToListString(listOrString);
         //jak jsem mohl být takový debil argument dát to tady - na co tady trimovat?
-        //CA.Trim(listOrString);
         return listOrString;
     }
 
     // Direct edit
     public static List<string> RemoveLineComments(List<string> list)
     {
-        //List<string> list = CastHelper.ToListString(listOrString);
         for (int index = list.Count - 1; index >= 0; index--)
         {
             list[index] = SHParts.RemoveAfterFirst(list[index], "//");

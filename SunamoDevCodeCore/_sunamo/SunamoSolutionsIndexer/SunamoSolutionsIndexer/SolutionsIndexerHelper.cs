@@ -85,7 +85,6 @@ internal class SolutionsIndexerHelper
             {
                 files[index] = Path.GetFileNameWithoutExtension(files[index]);
             }
-            //files = Path.GetFileNamesWoExtension(files);
             foreach (var item in files)
             {
                 var module = Path.GetFileName(item);

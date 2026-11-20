@@ -22,7 +22,6 @@ internal abstract class GeneratorCodeAbstract
 
     public void AddTab(int tabCount)
     {
-        //tabCount += 1;
         for (var index = 0; index < tabCount; index++) sb.AddRaw("\t");
     }
 }

@@ -147,15 +147,6 @@ public class CsprojShared
         return slnFiles.Count > 0;
     }
 
-    //public static List<string> GetCsprojs(bool onlyInSwld)
-    //{
-    //    var csprojs =
 
-    //    if (onlyInSwld)
-    //    {
-    //        return FSGetFiles.GetFilesEveryFolder(logger, @"E:\vs\Projects\PlatformIndependentNuGetPackages", "*.csproj", SearchOption.AllDirectories).ToList();
-    //    }
 
-    //    return csprojs;
-    //}
 }

@@ -49,11 +49,9 @@ public class SunamoDevCodeHelper
         {
             var newPath = item.Replace(sourceBasePath, folderTo);
             FS.CreateUpfoldersPsysicallyUnlessThere(newPath);
-            //FS.CopyFile(item, newPath, FileMoveCollisionOptionDC.DontManipulate);
         }
 
         archive(slnFolderTo);
-        //ThisApp.Info("Archive was created successfully, is important create archive because first open with VS because will create folders package,obj,bin");
     }
 
     public static void RemoveGitFiles(List<string> files, bool isIncludingGitFiles = true, bool isIncludingDownloadedFolders = false,

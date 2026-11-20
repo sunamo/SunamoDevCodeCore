@@ -9,8 +9,6 @@ internal static partial class CSharpHelper
     public static bool IsEmptyCommentedOrOnlyWithNamespace(string fnwoe, List<string> linesOriginal, Action<List<string>> RemoveBetweenIfAndEndif, List<string> csWithSharpIf)
     {
         var lines = linesOriginal.ToList();
-        //var lines = await GetFileContentLines(value, true);
-        //var fnwoe = Path.GetFileNameWithoutExtension(value);
         if (csWithSharpIf.Contains(fnwoe))
         {
             return false;
@@ -26,7 +24,6 @@ internal static partial class CSharpHelper
         lines = RemoveComments(lines);
         lines = lines.Where(data => !data.StartsWith("namespace")).ToList();
         lines = lines.Where(data => !data.StartsWith("using")).ToList();
-        // "," protože např. value enum souborech nemusí být žádný ;
         lines = lines.Where(data => data.EndsWith(";") || data.EndsWith(",")).ToList();
         if (!lines.Any())
         {

@@ -3,7 +3,6 @@ namespace SunamoDevCodeCore._sunamo.SunamoDevCodeBase._public.SunamoData.Data;
 internal class FromToTSHDC<T>
 {
     protected long fromL;
-    // A3 true = DateTime, A3 False = None
     public FromToUseDC ftUse = FromToUseDC.DateTime;
     protected long toL;
 

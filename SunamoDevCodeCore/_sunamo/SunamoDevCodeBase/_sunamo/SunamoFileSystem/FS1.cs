@@ -13,7 +13,6 @@ internal partial class FS
     internal static void CreateFoldersPsysicallyUnlessThere(string path)
     {
         ThrowEx.IsNullOrEmpty(nameof(path), path);
-        //ThrowEx.IsNotWindowsPathFormat(nameof(path), path);
         if (Directory.Exists(path))
         {
             return;

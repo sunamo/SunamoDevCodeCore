@@ -22,10 +22,6 @@ public class AddOrEditNamespaceService
         {
             csPath = pathToSave;
         }
-        //if (CSharpHelper.IsEmptyCommentedOrOnlyWithNamespace("", linesFile, null, new List<string>()))
-        //{
-        //    return null;
-        //}
         var relPath = csPath.Replace(pathToCsprojFolder, string.Empty);
         var parts = relPath.Split('\\', StringSplitOptions.RemoveEmptyEntries).ToList();
         parts.RemoveAt(parts.Count - 1);
@@ -74,13 +70,7 @@ public class AddOrEditNamespaceService
     private List<string> AddNamespaceIfIsMissingInCs(List<string> lines, string newNs)
     {
         // Tohle jsem tu dal, když jsem byl dement a pracoval jsem v konzoli na neex cestě. Divil jsem se jaktože to v programu jde. Nebylo to tedy debug vs release jak jsem si původně myslel! Opět jsem hledal problém jinde než byl!
-        //if (item.EndsWith("XmlGenerator.cs"))
-        //{
-        //    Console.WriteLine("XmlGenerator: " + item);
-        //}
-        //throw new Exception("Nepouštět, dojebává mi to soubory tím že sice vloží na první řádek NS; ale nesmaže { }");
         // todo napsat testy na toto
-        //var lastIndexOfUsing = -1;
         var isNsOuter = false;
         var namespaceLineIndex = -1;
         RemoveEmptyLinesService removeEmptyLinesService = new RemoveEmptyLinesService();
@@ -92,7 +82,6 @@ public class AddOrEditNamespaceService
             isNsOuter = list.StartsWith("namespace");
             if (isNsOuter)
             {
-                //isNsOuter = isNs;
                 namespaceLineIndex = index;
                 break;
             }
@@ -101,11 +90,6 @@ public class AddOrEditNamespaceService
                 break;
             }
             // vůbec nevím k čemu jsem tu dal tuto konstrukci
-            //if (list != "" && list.StartsWith("using") && list.StartsWith("global using") && isNsOuter)
-            //{
-            //    lastIndexOfUsing = i - 1;
-            //    break;
-            //}
         }
         // todo zde je problém. přidává mi to NS i když už je v #elif. stačí potom zakomentovat RemoveFileScopedNamespaceWhenIsInSharpIf
         if (namespaceLineIndex != -1 && lines[namespaceLineIndex].Trim() == "namespace")
@@ -138,14 +122,12 @@ public class AddOrEditNamespaceService
 
                 if (namespaceLineIndex != 0)
                 {
-                    //lines.RemoveAt(namespaceLineIndex);
                     if (!lines[namespaceLineIndex].Contains(";"))
                     {
                         removeEmptyLinesService.RemoveEmptyLinesFromStartAndEnd(lines);
                         lines[0] = lines[0].TrimStart('{');
                         lines[lines.Count - 1] = lines[lines.Count - 1].TrimEnd('}');
                     }
-                    //AddNamespaceOnBegin(newNs, lines);
                     #region Tohle jsem nemusel dělat, od toho tu mám už TFCsFormat
                     lines.RemoveAt(namespaceLineIndex);
                     lines.Insert(0, "");
@@ -159,7 +141,6 @@ public class AddOrEditNamespaceService
             }
         }
         //// u jiných přidává prázdný řádek protože smazal }
-        //var temp = SHJoin.JoinNL(lines, false, lines);
         //// Tohle jsem tu dal, když jsem byl dement a pracoval jsem v konzoli na neex cestě. Divil jsem se jaktože to v programu jde. Nebylo to tedy debug vs release jak jsem si původně myslel! Opět jsem hledal problém jinde než byl!
         ////if (item.EndsWith("XmlGenerator.cs"))
         ////{
@@ -172,18 +153,12 @@ public class AddOrEditNamespaceService
         ////        Console.WriteLine("Content NOT changed");
         ////    }
         ////}
-        //if (temp != text)
-        //{
-        //    await TFCsFormat.WriteAllText(item, temp);
-        //}
-        //await TFCsFormat.WriteAllLines(item, lines);
         return lines;
     }
     public readonly List<string> classCodeElements = new List<string>() { "class ", "interface ", "delegate", "enum ", "struct " };
     // FUnguje to OK, prošel jsem si všechny soubory před commitem
     private async Task<List<string>> RemoveFileScopedNamespaceWhenIsInSharpIf(List<string> list)
     {
-        //var list = (await TF.ReadAllLines(item)).ToList();
         List<int> dxNs = new List<int>();
         int dxElse = -1;
         for (int index = 0; index < list.Count; index++)
@@ -211,8 +186,6 @@ public class AddOrEditNamespaceService
         {
             // tady nevím jestli to je správně. mám jen jeden řádek začínající namespace ale chci ho odstranit
             // proto to zakomentuji
-            //list.RemoveAt(dxNs.First());
-            //await TFCsFormat.WriteAllLines(item, list);
         }
         else if (dxNs.Count > 1)
         {
@@ -229,7 +202,6 @@ public class AddOrEditNamespaceService
             }
             // Řádky jen odstraňuje, není nutné formátovat
             // Zde se zapíšou jen změny - je to v else if
-            //await TFCsFormat.WriteAllLines(item, list);
         }
         return list;
     }

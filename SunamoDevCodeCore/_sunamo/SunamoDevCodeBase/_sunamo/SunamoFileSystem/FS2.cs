@@ -74,7 +74,6 @@ internal partial class FS
 
     internal static List<string> GetFiles(string folder, string mask, SearchOption searchOption /*, GetFilesArgsDC getFilesArgs = null*/)
     {
-        //ThrowEx.NotImplementedMethod();
         return Directory.GetFiles(folder, mask, searchOption).ToList();
     }
 }

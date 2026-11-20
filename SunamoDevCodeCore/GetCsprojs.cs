@@ -8,7 +8,6 @@ public partial class GetCsprojs
     public static List<string> GetCsprojsAll(ILogger logger, bool __NotCore_Projects = false, bool __NotCoreWeb_Projects = false, bool __OnlyWindowsCore_Projects = false)
     {
         var slns = GetSlns.GetSolutions(logger);
-        //FoldersWithSolutions.Fwss.Where(d => d.)
 
         if (!__NotCore_Projects)
         {
@@ -64,10 +63,8 @@ public partial class GetCsprojs
         var PlatformIndependentNuGetPackages = GetCsprojInSolutionClass(logger, @"E:\vs\Projects\PlatformIndependentNuGetPackages\");
         return PlatformIndependentNuGetPackages;
 
-        //var sunamoNotmine = GetCsprojInSolutionClass(@"E:\vs\Projects\sunamo.notmine\");
         ////var sunamo = GetCsprojInSolutionClass(@"E:\vs\Projects\PlatformIndependentNuGetPackages\");
 
-        //return PlatformIndependentNuGetPackages.Intersect(sunamoNotmine);
     }
 
     public static Dictionary<string, string> GetCsprojsAllDict(ILogger logger)

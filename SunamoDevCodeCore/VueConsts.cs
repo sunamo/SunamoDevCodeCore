@@ -15,7 +15,6 @@ public class VueConsts
 
     public static List<string> DontAddRcub = new List<string>([MethodsRcub, PropsRcub]);
 
-    //List<string> sContains = new List<string>("data():", "methods:{");
     public static List<string> ContainsList = new List<string>([Cl]);
 
     public static List<string> StartWithList = new List<string>([Constructor, Import, "//", Export]);
