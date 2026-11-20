@@ -11,8 +11,7 @@ internal abstract class GeneratorCodeAbstract
         xmlDoc = new XmlDoc(sb);
     }
 
-    // EN: Returns the generated code and resets the string builder
-    // CZ: Vrátí vygenerovaný kód a resetuje string builder
+    // Returns the generated code and resets the string builder
     public override string ToString()
     {
         var result = sb.ToString();

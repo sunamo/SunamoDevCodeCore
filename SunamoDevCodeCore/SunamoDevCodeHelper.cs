@@ -13,8 +13,7 @@ public class SunamoDevCodeHelper
         }
         catch (Exception)
         {
-            // EN: It's try so don't know what this is doing here
-            // CZ: Je to try takže nevím co tu dělá tohle
+            // It's try so don't know what this is doing here
         }
 
         var files = FSGetFiles.GetFiles(logger, directoryPath, "*", SearchOption.AllDirectories);

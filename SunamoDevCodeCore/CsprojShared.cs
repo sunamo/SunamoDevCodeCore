@@ -2,10 +2,8 @@ namespace SunamoDevCodeCore;
 
 using Microsoft.Extensions.Logging;
 
-// EN: Although this is from CommandsToAllCsprojs.Shared, it is useful for all CommandsToAll* projects
-// EN: Not adding it there as a single file but as an entire csproj
-// CZ: Toto je sice z CommandsToAllCsprojs.Shared ale hodí se na to všechny CommandsToAll*
-// CZ: Nepřidávám to tam jako soubor ale jako celý csproj
+// Although this is from CommandsToAllCsprojs.Shared, it is useful for all CommandsToAll* projects
+// Not adding it there as a single file but as an entire csproj
 public class CsprojShared
 {
     // Detects whether the folder contains a solution or csproj file. Returns true for sln, false for csproj, null for neither or both.

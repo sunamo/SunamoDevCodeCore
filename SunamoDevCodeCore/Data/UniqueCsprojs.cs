@@ -1,7 +1,6 @@
 namespace SunamoDevCodeCore.Data;
 
-// EN: Loads all csproj in directory, can convert from path to name and vice versa
-// CZ: Načte všechny csproj v dir, umí převádět z cesty na název a vice versa
+// Loads all csproj in directory, can convert from path to name and vice versa
 public static class UniqueCsprojs
 {
     private static TwoWayDictionary<string, string> dictionary = new TwoWayDictionary<string, string>();
@@ -25,8 +24,7 @@ public static class UniqueCsprojs
         return dictionary.SecondToFirst[csprojPath];
     }
 
-    // EN: Converts to csproj path, not to folder path
-    // CZ: Převede na csproj path, nikoliv na cestu ke složce
+    // Converts to csproj path, not to folder path
     public static string ToPath(string projectName)
     {
 

@@ -19,8 +19,7 @@ public class GlobalUsingsInstance
         if (!r.GlobalUsings.Contains(_using)) r.GlobalUsings.Add(_using);
     }
 
-    // EN: Remove all global usings that start with the specified prefix (case insensitive)
-    // CZ: Odstraň všechny global usings které začínají zadaným prefixem (case insensitive)
+    // Remove all global usings that start with the specified prefix (case insensitive)
     public void RemoveGlobalUsingsStartingWith(string prefix)
     {
         r.GlobalUsings = r.GlobalUsings.Where(globalUsing => !globalUsing.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)).ToList();

@@ -1,7 +1,6 @@
 namespace SunamoDevCodeCore.Data;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+// Variable names have been checked and replaced with self-descriptive names
 public class CsprojsInSolution
 {
     public List<string> CsprojFolderPaths { get; set; } = null!;

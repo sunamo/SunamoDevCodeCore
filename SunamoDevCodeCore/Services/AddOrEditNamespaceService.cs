@@ -46,8 +46,7 @@ public class AddOrEditNamespaceService
     }
     private List<string> RemoveIfContainsMoreNamespace(List<string> list)
     {
-        // EN: Find all namespace lines and remove duplicates (keep only the first one)
-        // CZ: Najdi všechny namespace řádky a odstraň duplikáty (zachovej pouze první)
+        // Find all namespace lines and remove duplicates (keep only the first one)
         var nsLines = new List<int>();
         for (int index = 0; index < list.Count; index++)
         {
@@ -57,8 +56,7 @@ public class AddOrEditNamespaceService
             }
         }
 
-        // EN: Remove from the end to avoid index shifting
-        // CZ: Odstraňuj od konce aby se neposunuly indexy
+        // Remove from the end to avoid index shifting
         for (int lineIndex = nsLines.Count - 1; lineIndex > 0; lineIndex--)
         {
             list.RemoveAt(nsLines[lineIndex]);
@@ -110,13 +108,11 @@ public class AddOrEditNamespaceService
             }
             else
             {
-                // EN: Check if namespace is already correct at line 0 - skip processing to avoid corruption
-                // CZ: Zkontroluj zda je namespace už správně na řádku 0 - skipni processing aby se nepokazil soubor
+                // Check if namespace is already correct at line 0 - skip processing to avoid corruption
                 var expectedNs = "namespace " + newNs + ";";
                 if (namespaceLineIndex == 0 && lines[0].Trim() == expectedNs.Trim())
                 {
-                    // EN: Namespace is already correct, do nothing
-                    // CZ: Namespace je již správně, nedělej nic
+                    // Namespace is already correct, do nothing
                     return lines;
                 }
 
